@@ -1,0 +1,142 @@
+
+Processing sheet: AWS vs OpenStack Comparison
+Audit middleware + central logging (ELK/Opensearch)
+BI Tools
+Barbican
+Barbican (with HSM backend)
+CI/CD Pipelines
+CI/CD Tools
+Cinder
+CloudKitty + Aodh/alerting
+CloudKitty + Ceilometer/Gnocchi (rating/chargeback)
+Congress
+Data Lake Solutions
+Data Transfer Solutions
+Deployment Tools
+Designate
+Distributed Tracing
+Docker Registry
+ETL Orchestration
+ETL Tools
+Edge Computing
+Edge Deployments
+Freezer
+Git RepositoriesOpenStack services (categorized) — verified against OpenStack 2025.2 “Flamingo” (released Oct 1, 2025)
+
+IaaS (core infrastructure):
+- Identity & access: Keystone
+- Images: Glance
+- Resource placement / inventory: Placement
+- Compute (VMs): Nova
+- Bare metal: Ironic
+- Accelerators (GPU/FPGA attach): Cyborg
+- Networking (L2/L3, routers, SGs, IPAM): Neutron
+- Load balancing: Octavia
+- DNS-as-a-service: Designate
+- Storage (Object): Swift
+- Storage (Block): Cinder
+- Storage (Shared file): Manila
+- Backup / DR: Freezer, Freezer-api
+
+PaaS (platform, orchestration, and day-2 operations):
+- Orchestration (templates/stacks): Heat
+- Workflow / automation: Mistral
+- DBaaS: Trove
+- Messaging / queues: Zaqar
+- NFV orchestration: Tacker
+- Key management / secrets: Barbican
+- Telemetry (metering/metrics collection): Ceilometer
+- Telemetry (alarming): Aodh
+- Observability integration (Prometheus multi-tenancy + Keystone auth): Aetos
+- Log management: Venus
+- Resource reservations: Blazar
+- Rating / chargeback: Cloudkitty
+- Infrastructure optimization: Watcher
+- RCA / event correlation: Vitrage
+- Instance high availability: Masakari
+- Compute inside Object Storage (run code near Swift): Storlets
+- Day-2 operations / self-service workflows: Adjutant
+
+FaaS (Serverless):
+- No core OpenStack “functions-as-a-service” in the 2025.2 service set; typically delivered via Kubernetes serverless layers deployed on top of OpenStack (e.g., Knative/OpenFaaS).
+
+CaaS (Containers):
+- Kubernetes / container infrastructure management: Magnum
+- Containers-as-a-service (run containers as first-class resources): Zun
+
+SaaS (end-user / UI):
+- Classic dashboard: Horizon
+- Modern dashboard: Skyline (Skyline-apiserver + Skyline-console)
+
+Practical caveat:
+- Even if a project is in the 2025.2 service set, packaging can vary by distribution/deployer; for example, Kolla notes it dropped building Venus container images due to the project’s inactivity and related Horizon plugin build issues.
+
+Graph databases on Nova
+GraphQL Solutions
+Heat
+Heat (AutoScalingGroup) + Senlin
+IDE Solutions
+Ironic
+Kafka on Nova
+Kafka on Nova/Magnum
+Keystone
+Keystone (Multi-domain)
+Load Balancing + CDN
+Magnum
+Magnum (Kubernetes Jobs/CronJobs) + Mistral
+Magnum (Kubernetes)
+Manila
+Manila (with Lustre backend)
+Manila (with Windows drivers)
+Mistral
+MongoDB on Nova/Trove
+Murano
+Murano (optional) / Kubernetes PaaS on Magnum
+Neutron
+Neutron (RBAC/shared networks) + Octavia (internal LB)
+Neutron routers + BGP dynamic routing
+No OpenStack service (provider networks + BGP/SDN)
+No current VPNaaS (use external VPN appliance)
+No direct (Cassandra/ScyllaDB on Magnum/Nova)
+No direct (ClickHouse/Greenplum on Magnum/Nova)
+No direct (Hyperledger Fabric on Magnum/Nova)
+No direct (Keystone domains/projects + policy/automation)
+No direct (Kubernetes on Magnum + autoscaling/Knative)
+No direct (use Ansible/Salt + Mistral/automation)
+No direct equivalent (compliance/audit documentation)
+No native (deploy on Nova/Magnum)
+No native API Gateway (use Kong/NGINX/Traefik)
+No native CDN (integrate external CDN/cache)
+No native DDoS service (network/edge protection)
+No native DLP/classification (external DLP tools)
+No native OpenStack FaaS (use Magnum + Knative/OpenFaaS)
+No native WAF (deploy ModSecurity/NGINX/HAProxy)
+No native equivalent (operational best-practice reviews)
+No native equivalent (status via monitoring + dashboards)
+No native gateway (use Swift S3 gateway / third-party appliance)
+No native inspector (vulnerability scanners)
+No native threat detection (SIEM/IDS/IPS)
+Nova
+Nova + Horizon
+Octavia
+OpenSearch/Elasticsearch
+OpenStack SDKs
+Policy/audit: Congress + logs + compliance tooling
+Presto/Trino on Nova
+RabbitMQ on Nova
+Redis/Memcached on Nova
+Resource tags + Searchlight (optional)
+Sahara
+Sahara + Zun
+Service Mesh Solutions
+Swift
+Swift with CDN
+Telemetry: Ceilometer + Gnocchi + Aodh (or Monasca)
+Testing Infrastructure
+Time-series databases on Nova
+Trove
+Trove + Migration Tools
+Web-based Shell
+Zaqar
+Zaqar + Mistral
+Zun + Magnum

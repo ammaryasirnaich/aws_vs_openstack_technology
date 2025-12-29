@@ -1,0 +1,56 @@
+
+
+IaaS:
+- Compute (VMs/instances): EC2
+- Autoscaling: EC2 Auto Scaling
+- Load balancing: Elastic Load Balancing (ALB/NLB/CLB)
+- Networking (virtual network): VPC
+- Networking (routing/connectivity): Transit Gateway, Direct Connect, Site-to-Site VPN
+- Networking (public IP & egress): Elastic IP, NAT Gateway
+- Edge & CDN: CloudFront
+- DNS: Route 53
+- Storage (Object/Archive): S3, S3 Glacier
+- Storage (Block): EBS
+- Storage (File): EFS, FSx (Windows/Lustre/ONTAP/OpenZFS)
+- Hybrid storage & transfer appliances: Storage Gateway, Snow Family (Snowcone/Snowball/Snowmobile)
+- Data transfer/sync: DataSync
+- Backup: AWS Backup
+- Hybrid/on-prem cloud: Outposts
+- Edge locations / regional extensions: Local Zones, Wavelength
+
+PaaS:
+- App hosting (managed runtime): Elastic Beanstalk, App Runner
+- Databases (relational & purpose-built): RDS, Aurora, DynamoDB, ElastiCache, MemoryDB for Redis, DocumentDB, Neptune, Keyspaces (for Apache Cassandra)
+- Analytics / data lake / ETL: Redshift, OpenSearch Service, EMR, AWS Glue, Athena, Lake Formation, DataBrew
+- Streaming & ingestion: Kinesis (Streams/Firehose), MSK (Managed Kafka)
+- Messaging integration: MQ
+- Integration / data movement: AppFlow
+- Batch processing: AWS Batch
+- ML platform: SageMaker
+
+FaaS (Serverless):
+- Functions: AWS Lambda
+- Workflow / orchestration: Step Functions
+- Events / event bus: EventBridge
+- API front door: API Gateway, AppSync
+- Edge serverless: Lambda@Edge, CloudFront Functions
+
+CaaS (Containers):
+- Container orchestration: ECS, EKS
+- Serverless containers (no nodes to manage): Fargate
+- Container registry: ECR
+- Hybrid Kubernetes: EKS Anywhere
+- Service mesh: App Mesh
+- Lightweight container service: Lightsail container services
+
+SaaS / End-user computing:
+- BI / dashboards: QuickSight
+- Contact center: Amazon Connect
+- Docs collaboration: WorkDocs
+- Email: WorkMail
+- Virtual desktops: WorkSpaces
+- Secure browser access: WorkSpaces Secure Browser (formerly WorkSpaces Web)
+- App streaming: WorkSpaces applications (formerly AppStream 2.0) / AppStream 2.0 (legacy branding)
+- Secure messaging: AWS Wickr
+- Observability dashboards: Amazon Managed Grafana
+- Meetings/chat: Amazon Chime (end-of-support Feb 20, 2026; Chime SDK not impacted)

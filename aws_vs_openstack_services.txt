@@ -1,0 +1,121 @@
+AWS vs OpenStack services (categorized)
+
+========================
+AWS services (categorized)
+========================
+AWS services (categorized) — verified / corrected (as of Dec 29, 2025)
+
+Notes on naming/lifecycle:
+- Amazon WorkSpaces Web is now called Amazon WorkSpaces Secure Browser.
+- Amazon WorkSpaces applications is branded as “formerly AppStream 2.0”; AppStream 2.0 branding still appears in AWS announcements/docs.
+- Amazon Chime is in end-of-support: no new customers since Feb 19, 2025; support ends Feb 20, 2026.
+- Amazon Honeycode was discontinued Feb 29, 2024 (so not current).
+
+IaaS:
+- Compute (VMs/instances): EC2
+- Autoscaling: EC2 Auto Scaling
+- Load balancing: Elastic Load Balancing (ALB/NLB/CLB)
+- Networking (virtual network): VPC
+- Networking (routing/connectivity): Transit Gateway, Direct Connect, Site-to-Site VPN
+- Networking (public IP & egress): Elastic IP, NAT Gateway
+- Edge & CDN: CloudFront
+- DNS: Route 53
+- Storage (Object/Archive): S3, S3 Glacier
+- Storage (Block): EBS
+- Storage (File): EFS, FSx (Windows/Lustre/ONTAP/OpenZFS)
+- Hybrid storage & transfer appliances: Storage Gateway, Snow Family (Snowcone/Snowball/Snowmobile)
+- Data transfer/sync: DataSync
+- Backup: AWS Backup
+- Hybrid/on-prem cloud: Outposts
+- Edge locations / regional extensions: Local Zones, Wavelength
+
+PaaS:
+- App hosting (managed runtime): Elastic Beanstalk, App Runner
+- Databases (relational & purpose-built): RDS, Aurora, DynamoDB, ElastiCache, MemoryDB for Redis, DocumentDB, Neptune, Keyspaces (for Apache Cassandra)
+- Analytics / data lake / ETL: Redshift, OpenSearch Service, EMR, AWS Glue, Athena, Lake Formation, DataBrew
+- Streaming & ingestion: Kinesis (Streams/Firehose), MSK (Managed Kafka)
+- Messaging integration: MQ
+- Integration / data movement: AppFlow
+- Batch processing: AWS Batch
+- ML platform: SageMaker
+
+FaaS (Serverless):
+- Functions: AWS Lambda
+- Workflow / orchestration: Step Functions
+- Events / event bus: EventBridge
+- API front door: API Gateway, AppSync
+- Edge serverless: Lambda@Edge, CloudFront Functions
+
+CaaS (Containers):
+- Container orchestration: ECS, EKS
+- Serverless containers (no nodes to manage): Fargate
+- Container registry: ECR
+- Hybrid Kubernetes: EKS Anywhere
+- Service mesh: App Mesh
+- Lightweight container service: Lightsail container services
+
+SaaS / End-user computing:
+- BI / dashboards: QuickSight
+- Contact center: Amazon Connect
+- Docs collaboration: WorkDocs
+- Email: WorkMail
+- Virtual desktops: WorkSpaces
+- Secure browser access: WorkSpaces Secure Browser (formerly WorkSpaces Web)
+- App streaming: WorkSpaces applications (formerly AppStream 2.0) / AppStream 2.0 (legacy branding)
+- Secure messaging: AWS Wickr
+- Observability dashboards: Amazon Managed Grafana
+- Meetings/chat: Amazon Chime (end-of-support Feb 20, 2026; Chime SDK not impacted)
+
+
+============================================
+OpenStack services (categorized) — 2025.2 “Flamingo”
+============================================
+OpenStack services (categorized) — verified against OpenStack 2025.2 “Flamingo” (released Oct 1, 2025)
+
+IaaS (core infrastructure):
+- Identity & access: Keystone
+- Images: Glance
+- Resource placement / inventory: Placement
+- Compute (VMs): Nova
+- Bare metal: Ironic
+- Accelerators (GPU/FPGA attach): Cyborg
+- Networking (L2/L3, routers, SGs, IPAM): Neutron
+- Load balancing: Octavia
+- DNS-as-a-service: Designate
+- Storage (Object): Swift
+- Storage (Block): Cinder
+- Storage (Shared file): Manila
+- Backup / DR: Freezer, Freezer-api
+
+PaaS (platform, orchestration, and day-2 operations):
+- Orchestration (templates/stacks): Heat
+- Workflow / automation: Mistral
+- DBaaS: Trove
+- Messaging / queues: Zaqar
+- NFV orchestration: Tacker
+- Key management / secrets: Barbican
+- Telemetry (metering/metrics collection): Ceilometer
+- Telemetry (alarming): Aodh
+- Observability integration (Prometheus multi-tenancy + Keystone auth): Aetos
+- Log management: Venus
+- Resource reservations: Blazar
+- Rating / chargeback: Cloudkitty
+- Infrastructure optimization: Watcher
+- RCA / event correlation: Vitrage
+- Instance high availability: Masakari
+- Compute inside Object Storage (run code near Swift): Storlets
+- Day-2 operations / self-service workflows: Adjutant
+
+FaaS (Serverless):
+- No core OpenStack “functions-as-a-service” in the 2025.2 service set; typically delivered via Kubernetes serverless layers deployed on top of OpenStack (e.g., Knative/OpenFaaS).
+
+CaaS (Containers):
+- Kubernetes / container infrastructure management: Magnum
+- Containers-as-a-service (run containers as first-class resources): Zun
+
+SaaS (end-user / UI):
+- Classic dashboard: Horizon
+- Modern dashboard: Skyline (Skyline-apiserver + Skyline-console)
+
+Practical caveat:
+- Even if a project is in the 2025.2 service set, packaging can vary by distribution/deployer; for example, Kolla notes it dropped building Venus container images due to the project’s inactivity and related Horizon plugin build issues.
